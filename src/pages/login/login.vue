@@ -1,5 +1,8 @@
 <template>
-    <Login @login="login" :option="option" />
+    <div>
+        <Header title="登录页面" border back>登录页面</Header>
+        <Login @login="login" :option="option" />
+    </div>
 </template>
 
 <script>

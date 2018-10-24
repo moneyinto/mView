@@ -29,6 +29,7 @@
         font-family: "微软雅黑";
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        font-size: 14px;
     }
 
     img {
