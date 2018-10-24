@@ -49,6 +49,7 @@
 | passwordPlaceholder | 密码输入框placeholder值 | String | 0 |
 
 option
+
 | 属性 | 说明 | 类型 | 默认值 |
 | :--: | :--: | :--: | :--: |
 | verifyMobile | 是否验证手机号 | Boolean | false |
