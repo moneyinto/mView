@@ -17,6 +17,10 @@
             <div class="category" @click="$router.push('toaster')">
                 Toaster提示
             </div>
+
+            <div class="category" @click="$router.push('button')">
+                Button提示
+            </div>
         </Content>
     </div>
 </template>

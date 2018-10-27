@@ -5,6 +5,7 @@ import Alert from './alert';
 import Header from './header';
 import Content from './content';
 import Flex from './flex';
+import Button from './button';
 
 import Login from './login';
 
@@ -18,10 +19,9 @@ const mView = {
     ...Flex,
     Header,
     Content,
-    Login
+    Login,
+    Button
 };
-
-console.log(mView);
 
 const install = (Vue, opts = {}) => {
     Object.keys(AllCmponents).forEach(key => {
