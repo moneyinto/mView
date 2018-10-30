@@ -6,24 +6,13 @@ export default (Vue) => {
 
     Vue.prototype.$loading = () => {};
 
-    Vue.prototype.$loading.start = () => {
-        instance.width = 0;
+    Vue.prototype.$loading.show = (type, content) => {
+        instance.type = type || 0;
+        instance.content = content || '';
         document.body.appendChild(instance.$el);
-        instance.loadingTimer && clearInterval(instance.loadingTimer);
-        instance.loadingTimer = setInterval(() => {
-            if (instance.width < 95) {
-                instance.width = instance.width + Math.floor(Math.random() * 3 + 1);
-            } else {
-                clearInterval(instance.loadingTimer);
-            }
-        }, 100);
     };
 
-    Vue.prototype.$loading.end = () => {
-        instance.loadingTimer && clearInterval(instance.loadingTimer);
-        instance.width = 100;
-        setTimeout(() => {
-            instance.$el && instance.$el.remove();
-        }, 500);
+    Vue.prototype.$loading.hide = () => {
+        instance.$el && instance.$el.remove();
     };
 };

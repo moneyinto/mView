@@ -62,3 +62,20 @@ option
 | :--: | :--: | :--: |
 | login | 登录点击时触发 | 账号及密码 ```{account: '', password: ''}``` |
 
+#### Toaster
+```
+this.$toaster.show(content, type);
+```
+| 属性 | 说明 | 类型 | 默认值 |
+| :--: | :--: | :--: | :--: |
+| content | 提示内容 | String | - |
+| type | 提示类型 | Number | 0 |
+
+#### Loading
+```
+this.$loading.show(type, content);
+```
+| 属性 | 说明 | 类型 | 默认值 |
+| :--: | :--: | :--: | :--: |
+| content | 提示内容 | String | - |
+| type | 加载loading类型 | Number | 0 |

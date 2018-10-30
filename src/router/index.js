@@ -5,6 +5,7 @@ import Home from '@/pages/home/home';
 import Login from '@/pages/login/login';
 import Flex from '@/pages/flex/flex';
 import Toaster from '@/pages/toaster/toaster';
+import Loading from '@/pages/loading/loading';
 import Button from '@/pages/button/button';
 
 Vue.use(Router);
@@ -38,6 +39,12 @@ const router = new Router({
             name: 'toaster',
             path: '/toaster',
             component: Toaster
+        },
+
+        {
+            name: 'loading',
+            path: '/loading',
+            component: Loading
         },
 
         {
