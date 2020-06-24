@@ -18,6 +18,10 @@
                 Toaster提示
             </div>
 
+            <div class="category" @click="$router.push('alert')">
+                弹框
+            </div>
+
             <div class="category" @click="$router.push('loading')">
                 Loading
             </div>

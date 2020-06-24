@@ -5,6 +5,7 @@ import Home from '@/pages/home/home';
 import Login from '@/pages/login/login';
 import Flex from '@/pages/flex/flex';
 import Toaster from '@/pages/toaster/toaster';
+import Alert from '@/pages/alert/alert';
 import Loading from '@/pages/loading/loading';
 import Button from '@/pages/button/button';
 
@@ -39,6 +40,12 @@ const router = new Router({
             name: 'toaster',
             path: '/toaster',
             component: Toaster
+        },
+
+        {
+            name: 'alert',
+            path: '/alert',
+            component: Alert
         },
 
         {

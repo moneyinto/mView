@@ -10,8 +10,11 @@
                     <div>{{content}}</div>
                 </div>
                 <div class="alert-footer">
-                    <div class="alert-close-btn" @click="close">
-                        确定
+                    <div class="alert-btn cancel" v-if="showCancel" @click="cancel">
+                        {{cancelText}}
+                    </div>
+                    <div class="alert-btn" @click="sure">
+                        {{sureText}}
                     </div>
                 </div>
             </div>
@@ -25,17 +28,29 @@ export default {
         return {
             content: '',
             title: '提示',
-            isClose: false
+            isClose: false,
+            showCancel: false,
+            cancelText: '取消',
+            sureText: '确定'
         };
     },
 
     methods: {
+        sure() {
+            this.close();
+            this.onSure && this.onSure();
+        },
+
+        cancel() {
+            this.close();
+            this.onCancel && this.onCancel();
+        },
+
         close() {
             this.isClose = true;
             setTimeout(() => {
                 this.$el.remove();
                 this.isClose = false;
-                this.onClose();
             }, 300);
         }
     }
@@ -58,6 +73,9 @@ export default {
     animation-name: scaleIn;
     animation-duration: .3s;
     animation-fill-mode: both;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .alert-close {
@@ -97,40 +115,42 @@ export default {
 }
 
 .alert-title {
-    background: #2d8cf0;
-    color: #fff;
-    padding: 0 80px 0 20px;
-    height: 42px;
-    line-height: 42px;
+    color: #444;
+    padding: 24px 24px 16px;
+    text-align: center;
+    font-size: 16px;
 }
 
 .alert-content {
     background: #fff;
-    color: #444;
-    padding: 20px;
+    color: #666;
+    padding: 0 20px 20px;
+    font-size: 14px;
+    text-align: center;
 }
 
 .alert-footer {
-    padding: 0 20px 20px;
-    text-align: right;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    border-top: 1px solid #ececec;
 }
 
-.alert-close-btn {
-    display: inline-block;
-    border-color: #2d8cf0;
-    background-color: #2d8cf0;
-    color: #fff;
-    height: 28px;
-    line-height: 28px;
-    margin: 5px 5px 0;
-    padding: 0 15px;
-    border-radius: 2px;
+.alert-btn {
+    height: 44px;
+    line-height: 44px;
     font-weight: 400;
-    cursor: pointer;
-    text-decoration: none;
+    text-align: center;
+    flex: 1;
+    color: #444;
 }
 
-.alert-close-btn:hover {
-    background-color: #4e9cf0;
+.cancel {
+    border-right: 1px solid #ececec;
+    color: #666;
+}
+
+.alert-btn:active {
+    background: #ececec;
 }
 </style>

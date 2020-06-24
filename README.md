@@ -71,6 +71,40 @@ this.$toaster.show(content, type);
 | content | 提示内容 | String | - |
 | type | 提示类型 | Number | 0 |
 
+#### 弹框
+```
+// 传一个参数即为提示内容
+this.$alert.show('提示内容');
+
+// 传两个参数即为提示标题和内容
+this.$alert.show('提示标题', '提示内容');
+
+// 传三个参数即为提示标题、内容、按钮配置
+this.$alert.show('提示标题', '提示内容', () => {
+    // 确定按钮点击回调
+});
+
+this.$alert.show('提示标题', '提示内容', [
+    {
+        text: 'Cancel',
+        on: () => {
+            // 取消按钮点击回调
+        }
+    },
+    {
+        text: 'Sure',
+        on: () => {
+            // 确定按钮点击回调
+        }
+    }
+]);
+```
+| 属性 | 说明 | 类型 | 默认值 |
+| :--: | :--: | :--: | :--: |
+| title | 提示标题 | String | 提示 |
+| content | 提示内容 | String | - |
+| args | 按钮配置及方法 | Array/Function | - |
+
 #### Loading
 ```
 this.$loading.show(type, content);
